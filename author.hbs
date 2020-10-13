@@ -1,0 +1,50 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+<!-- start site's main content area -->
+<section class="content-wrap">
+	<div class="container">
+		<div class="row">
+			<!-- start main post area -->
+			<div class="col-md-8 main-content">
+				{{#author}}
+                <div class="cover author-cover">
+                    <div class="avatar-wrap">
+                        {{#if profile_image}}
+                            <img src="{{profile_image}}" alt="Author image" class="avatar">
+                            {{else}}
+                            <img src="{{asset "images/default-user-image.jpg"}}" alt="Author image" class="avatar">
+                        {{/if}}
+                    </div>
+                    <h3 class="author-name">
+                        {{name}}
+                    </h3>
+                    <div class="meta-info">
+                        <span class="post-count"><i class="fa fa-pencil-square-o"></i>{{plural ../pagination.total empty=(t "No Post") singular=(t "1 Post") plural=(t "% Posts")}}</span>
+                        {{#if location}}
+                        <span class="loaction"><i class="fa fa-map-marker"></i>{{location}}</span>
+                        {{/if}}
+                        {{#if website}}
+                        <span class="website"><i class="fa fa-globe"></i><a href="{{website}}" targer="_BLANK">{{t "Website"}}</a></span>
+                        {{/if}}
+                        {{#if twitter}}
+                        <span class="twitter"><a href="{{twitter_url}}"><i class="fa fa-twitter"></i></a></span>
+                        {{/if}}
+                        {{#if facebook}}
+                        <span class="facebook"><a href="{{facebook_url}}"><i class="fa fa-facebook"></i></a></span>
+                        {{/if}}
+                    </div>
+                    {{#if bio}}
+                    <div class="bio">{{{bio}}}</div>
+                    {{/if}}
+                </div>
+				{{/author}}
+				{{> loop}}
+				{{pagination}}
+			</div>
+			<!-- end main post area -->
+			{{! insert sidebar partial}}
+			{{> sidebar}}
+		</div>
+	</div>
+</section>
+<!-- end site's main content area -->

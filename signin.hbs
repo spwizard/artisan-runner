@@ -1,0 +1,41 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+<!-- start site's main content area -->
+<section class="content-wrap">
+	<div class="container">
+		<div class="row">
+			<!-- start main post area -->
+			<div class="col-md-12 main-content">
+				<article class="post">
+					<div class="post-head">
+						<h1 class="post-title h2">{{t "Welcome back!"}}</h1>
+					</div>
+					<div class="post-content">
+                        <div class="sign-up-description text-center">
+                            {{t "Sign into your account again for full access"}}
+                        </div>
+                        <div class="sign-up-form-wrap">
+                            <form data-members-form="signin" class="sign-up-form">
+                                <div class="form-group text-center">
+                                    <input data-members-email type="email" class="required email form-control" id="email" placeholder="{{t "Your email address"}}" required/>
+                                    <button class="btn btn-default" type="submit"><span class="loading-spinner"></span>{{t "Send login link"}}</button>
+                                </div>
+                                <div class="messages-wrap text-center">
+                                    <div class="message-success">
+                                        <strong>{{t "Great!"}}</strong> {{t "Check your inbox and click the link to complete sign in"}}
+                                    </div>
+                                    <div class="message-error">
+                                        <strong>{{t "Error!"}}</strong> {{t "Please enter a valid email address!"}}
+                                    </div>
+                                </div>
+                            </form>
+                            <p><small>{{t "Don't have an account yet?"}} <a href="/signup/">{{t "Sign up"}}</a></small></p>
+                        </div>
+					</div>
+				</article>
+			</div>
+			<!-- end main post area -->
+		</div>
+	</div>
+</section>
+<!-- end site's main content area -->

@@ -1,0 +1,28 @@
+<!-- start tag cloud widget -->
+{{#if @labs.subscribers}}
+<div class="widget">
+	<h4 class="title">{{t "Newsletter"}}</h4>
+	<div class="content newsletter">
+		<p>{{t "Subscribe to our newsletter"}}</p>
+        <form data-members-form="subscribe" class="subscribe-form">
+            <div class="form-group{{#if error}} error{{/if}}">
+                <div class="input-group">
+                    <input data-members-email type="email" class="required email" id="email" placeholder="{{t "Your email address"}}" required/>
+                </div>
+                <div class="input-group">
+                    <button class="btn btn-default btn-block" type="submit"><span class="loading-spinner"></span>{{t "Subscribe"}}</button>
+                </div>
+            </div>
+            <div class="messages-wrap text-center">
+                <div class="message-success">
+                    <strong>{{t "Great!"}}</strong> {{t "Check your inbox and click the link to complete the subscription"}}
+                </div>
+                <div class="message-error">
+                    <strong>{{t "Error!"}}</strong> {{t "Please enter a valid email address!"}}
+                </div>
+            </div>
+        </form>
+	</div>
+</div>
+{{/if}}
+<!-- end tag cloud widget -->
